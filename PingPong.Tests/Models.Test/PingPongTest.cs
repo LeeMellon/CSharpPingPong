@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using PingPongs.Models;
 using System;
 
@@ -39,28 +40,37 @@ namespace PingPongs.Tests
     //   PingPong testPong = new PingPong();
     //   Assert.AreEqual(true, testPong.IsDiv(Testint));
     // }
-    [TestMethod]
-    public void IsDivThree_DivisableBy3And5_Pong()
-    {
-      int Testint = 5;
-      PingPong testPong = new PingPong();
-      Assert.AreEqual("Pong", testPong.IsDiv(Testint));
-    }
+    // [TestMethod]
+    // public void IsDivThree_DivisableBy3And5_Pong()
+    // {
+    //   int Testint = 5;
+    //   PingPong testPong = new PingPong();
+    //   Assert.AreEqual("Pong", testPong.IsDiv(Testint));
+    // }
+    //
+    // [TestMethod]
+    // public void IsDivThree_DivisableBy3And5_PingPong()
+    // {
+    //   int Testint = 15;
+    //   PingPong testPong = new PingPong();
+    //   Assert.AreEqual("PingPong", testPong.IsDiv(Testint));
+    // }
+    // [TestMethod]
+    // public void IsDivThree_DivisableBy3And5_TestInt()
+    // {
+    //   int Testint = 14;
+    //   PingPong testPong = new PingPong();
+    //   string TestIntToString = Testint.ToString();
+    //   Assert.AreEqual(TestIntToString, testPong.IsDiv(Testint));
+    // }
 
     [TestMethod]
-    public void IsDivThree_DivisableBy3And5_PingPong()
+    public void GetRange_CreateRange_MakeRange()
     {
-      int Testint = 15;
       PingPong testPong = new PingPong();
-      Assert.AreEqual("PingPong", testPong.IsDiv(Testint));
-    }
-    [TestMethod]
-    public void IsDivThree_DivisableBy3And5_TestInt()
-    {
-      int Testint = 14;
-      PingPong testPong = new PingPong();
-      string TestIntToString = Testint.ToString();
-      Assert.AreEqual(TestIntToString, testPong.IsDiv(Testint));
+      List<int> TestRange = new List<int>{0,1,2,3,4,5};
+      Console.WriteLine(testPong.GetRange(5));
+      CollectionAssert.AreEqual(TestRange, testPong.GetRange(5));
     }
   }
 }
